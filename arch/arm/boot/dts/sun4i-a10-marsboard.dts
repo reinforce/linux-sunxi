@@ -136,6 +136,47 @@
 	status = "okay";
 };
 
+&nfc {
+	pinctrl-names = "default";
+	pinctrl-0 = <&nand_pins_a>, <&nand_cs0_pins_a>, <&nand_rb0_pins_a>;
+	status = "okay";
+
+	nand@0 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		reg = <0>;
+		allwinner,rb = <0>;
+
+		nand-ecc-mode = "hw";
+		nand-on-flash-bbt;
+
+		boot0@0 {
+			label = "boot0";
+			reg = /bits/ 64 <0x0 0x200000>;
+		};
+
+		boot0-rescue@200000 {
+			label = "boot0-rescue";
+			reg = /bits/ 64 <0x200000 0x200000>;
+		};
+
+		uboot@400000 {
+			label = "uboot";
+			reg = /bits/ 64 <0x400000 0x200000>;
+		};
+
+		uboot-rescue@600000 {
+			label = "uboot-rescue";
+			reg = /bits/ 64 <0x600000 0x200000>;
+		};
+
+		main@800000 {
+			label = "main";
+			reg = /bits/ 64 <0x800000 0xff800000>;
+		};
+	};
+};
+
 &ohci0 {
 	status = "okay";
 };
