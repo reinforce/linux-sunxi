@@ -102,6 +102,13 @@
 
 &i2c1 {
 	status = "okay";
+
+	dmard06: accelerometer@1c {
+		compatible = "domintech,dmard06";
+		reg = <0x1c>;
+		interrupt-parent = <&pio>;
+		interrupts = <7 0 IRQ_TYPE_LEVEL_LOW>; /* EINT0 (PH0) */
+	};
 };
 
 &i2c2 {
