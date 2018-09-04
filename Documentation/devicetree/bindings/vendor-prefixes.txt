@@ -453,6 +453,7 @@ wm	Wondermedia Technologies, Inc.
 x-powers	X-Powers
 xes	Extreme Engineering Solutions (X-ES)
 xillybus	Xillybus Ltd.
+xinsheng	Shenzhen Xinsheng Electronics Co., Ltd.
 xlnx	Xilinx
 xunlong	Shenzhen Xunlong Software CO.,Limited
 ysoft	Y Soft Corporation a.s.
